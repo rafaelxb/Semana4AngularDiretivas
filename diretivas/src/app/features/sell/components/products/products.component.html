@@ -1,0 +1,31 @@
+<h1>{{ titulo }}</h1>
+
+<div *ngFor="let produto of produtos">
+    <div class="card-produto">
+        <p >Produto: {{ produto.descricao }}</p> 
+        <p >Preço: {{ produto.preco }}</p> 
+        <p [ngClass]="{'qtd-em-estoque': produto.disponivel,'qtd-em-falta': !produto.disponivel}">Quantidade: {{ produto.quantidade }}</p> 
+        <p>Preço com Desconto: {{ precoComDesconto(produto.preco) }}</p>
+        <img src="{{ produto.imagem }}" width="150px" height="150px">
+        <p [ngClass]="{'em-estoque': produto.disponivel,'em-falta': !produto.disponivel}">
+            {{produto.disponivel ? 'Em Estoque' : 'Produto em Falta'}}</p>
+        <div class="card-comprar" *ngIf="produto.disponivel">
+            <button (click)="comprar()">Comprar</button>
+            <button (click)="obterPrecoDesconto()">Obter Desconto de 10%</button>
+        </div>
+        <hr>
+    </div>
+</div>
+
+<button (click)="exiberProduto()">Exibir Produtos</button>
+<br>
+<br>
+<hr>
+<div *ngFor="let marca of marcas">
+    <div class="card-marcas">
+        <img src="{{ marca.logo }}" width="100px" height="100px">
+        <p>Marca: {{marca.nome}} </p>
+        <p>Pais: {{marca.pais}} </p>
+    </div>
+
+</div>
