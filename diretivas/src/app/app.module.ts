@@ -4,6 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SellModule } from './features/sell/sell.module';
 import { SharedModule } from './shared/shared.module';
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -14,7 +18,12 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     SellModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: "pt-BR"
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

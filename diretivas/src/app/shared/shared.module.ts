@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RedDirective } from './directives/red.directive';
 import { BlueDirective } from './directives/blue.directive';
+import { PhonePipe } from './pipes/phone.pipe';
 
 
 
@@ -12,14 +13,16 @@ import { BlueDirective } from './directives/blue.directive';
     HeaderComponent,
     FooterComponent,
     RedDirective,
-    BlueDirective
+    BlueDirective,
+    PhonePipe
   ],
   imports: [
     CommonModule
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PhonePipe
   ]
 })
 export class SharedModule { }

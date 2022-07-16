@@ -13,6 +13,10 @@ export class ProductsComponent implements OnInit {
 
   exibeProduto = true;
 
+  dataHoje = new Date();
+
+  telefone = "11990909090"
+
   produto = {
     descricao: "Playstation",
     preco: 4500,
